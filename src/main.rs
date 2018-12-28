@@ -1,6 +1,16 @@
+
+extern crate winapi;
+
+type HPCON = *mut winapi::ctypes::c_void;
+extern "system" {
+    fn ClosePseudoConsole(hPC : HPCON);
+}
+
 fn main() {
-    let mut hello_str : &str = "Hello cruel world";
-    println!("{}", hello_str);
-    hello_str = "Hello borrow-checking world!";
-    println!("{}", hello_str);
+    unsafe {
+        const ZERO_HPCON_VALUE: HPCON = 0isize as HPCON;
+        ClosePseudoConsole(ZERO_HPCON_VALUE);
+    }
+
+    println!("done");
 }
