@@ -1,5 +1,5 @@
 [package]
-name = "RustWindowsPsuedoTerminal"
+name = "windows_psuedo_terminal"
 version = "0.1.0"
 authors = ["Austin Wise <AustinWise@gmail.com>"]
 edition = "2018"
